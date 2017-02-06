@@ -1,0 +1,2 @@
+# KeepHashTagInTweetDeck
+TweetDeckでもタグを保持して実況したい
