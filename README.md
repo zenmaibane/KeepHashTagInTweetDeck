@@ -1,2 +1,2 @@
 # KeepHashTagInTweetDeck
-TweetDeckでもタグを保持して実況したい
+TweetDeckでハッシュタグを保持してつぶやけるchrome拡張
