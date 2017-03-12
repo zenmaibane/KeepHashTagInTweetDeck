@@ -1,24 +1,24 @@
 run();
-function run(){
-    console.log("try connect");
+function run() {
     var tweetTextArea = document.querySelector(".compose-content .js-compose-text");
     if (tweetTextArea == null) {
-        console.log("retry");
         setTimeout(run, 1500);
         return;
     }
-    console.log("tweet field found");
     var hashTags = [];
     var tweetObserver = new MutationObserver(function () {
-        if (tweetTextArea.disabled){
+        if (tweetTextArea.disabled) {
             hashTags = [];
-            var tweetedHashTags = tweetTextArea.value.match(/[#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー\_]+/g)
+            var tweetedHashTags = tweetTextArea.value.match(/[ 　][#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー\_]+/g)
             if (tweetedHashTags) {
+                for (var i = 0; i < tweetedHashTags.length; i++) {
+                    tweetedHashTags[i] = tweetedHashTags[i].substr(1);
+                }
                 hashTags = tweetedHashTags;
             }
         }
         else {
-            if (hashTags.length !== 0){
+            if (hashTags.length !== 0) {
                 tweetTextArea.value = " " + hashTags.join(" ");
             }
             tweetTextArea.selectionStart = 0;
@@ -26,7 +26,7 @@ function run(){
         }
     })
     tweetObserver.observe(tweetTextArea, {
-        "attributes":true,
-        "attributeFilter":["disabled"]
+        "attributes": true,
+        "attributeFilter": ["disabled"]
     });
 }
