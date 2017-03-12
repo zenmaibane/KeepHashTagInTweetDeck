@@ -1,10 +1,13 @@
 run();
 function run(){
+    console.log("try connect");
     var tweetTextArea = document.querySelector(".compose-content .js-compose-text");
     if (tweetTextArea == null) {
+        console.log("retry");
         setTimeout(run, 1500);
         return;
     }
+    console.log("tweet field found");
     var hashTags = [];
     var tweetObserver = new MutationObserver(function () {
         if (tweetTextArea.disabled){
