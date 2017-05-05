@@ -23,6 +23,7 @@ function run() {
             }
             tweetTextArea.selectionStart = 0;
             tweetTextArea.selectionEnd = 0;
+            tweetTextArea.dispatchEvent(new Event('change'));
         }
     })
     tweetObserver.observe(tweetTextArea, {
