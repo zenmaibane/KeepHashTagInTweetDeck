@@ -1,17 +1,17 @@
 run();
 function run() {
-    var tweetTextArea = document.querySelector(".compose-content .js-compose-text");
+    let tweetTextArea = document.querySelector(".compose-content .js-compose-text");
     if (tweetTextArea == null) {
         setTimeout(run, 1500);
         return;
     }
-    var hashTags = [];
-    var tweetObserver = new MutationObserver(function () {
+    let hashTags = [];
+    let tweetObserver = new MutationObserver(function () {
         if (tweetTextArea.disabled) {
             hashTags = [];
-            var tweetedHashTags = tweetTextArea.value.match(/[ 　][#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー\_]+/g)
+            let tweetedHashTags = tweetTextArea.value.match(/[ 　][#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー_]+/g)
             if (tweetedHashTags) {
-                for (var i = 0; i < tweetedHashTags.length; i++) {
+                for (let i = 0; i < tweetedHashTags.length; i++) {
                     tweetedHashTags[i] = tweetedHashTags[i].substr(1);
                 }
                 hashTags = tweetedHashTags;
