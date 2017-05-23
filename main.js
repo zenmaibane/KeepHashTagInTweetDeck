@@ -9,7 +9,7 @@ function run() {
     let tweetObserver = new MutationObserver(function () {
         if (tweetTextArea.disabled) {
             hashTags = [];
-            let tweetedHashTags = tweetTextArea.value.match(/[ 　][#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー_]+/g)
+            let tweetedHashTags = tweetTextArea.value.match(/[\n 　][#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー_]+/g)
             if (tweetedHashTags) {
                 for (let i = 0; i < tweetedHashTags.length; i++) {
                     tweetedHashTags[i] = tweetedHashTags[i].substr(1);
