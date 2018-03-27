@@ -15,3 +15,6 @@ TweetDeckでハッシュタグを保持してつぶやけるchrome拡張
 
 ## 作成するにあたって書いた記事
 http://zenmaibane.hatenablog.com/entry/2017/02/17/181858
+
+## BetterTweetDeckに同じ機能を実装しました
+この拡張機能とほぼ同等の機能を実装し[BetterTweetDeck](https://better.tw/)にプルリクを出したところマージされ，v3.7.0から正式リリースされました．なので使いたい人はBetterTweetDeckをインストールするといいんじゃないかと思います．
